@@ -83,8 +83,8 @@
 
     <div class="product">
       <h3>Sugar</h3>
-      <p>₹45 / kg</p>
-      <button onclick="addToCart('Sugar', 45)">Add</button>
+      <p>₹48 / kg</p>
+      <button onclick="addToCart('Sugar', 48)">Add</button>
     </div>
 
     <div class="product">
