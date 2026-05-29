@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kirana Shop</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: green;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .container {
+      display: flex;
+      padding: 20px;
+    }
+
+    .products {
+      flex: 2;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .product {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px #ccc;
+      text-align: center;
+    }
+
+    .product button {
+      background: green;
+      color: white;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    .cart {
+      flex: 1;
+      margin-left: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      height: fit-content;
+    }
+
+    .cart h3 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  🛒 My Kirana Shop
+</header>
+
+<div class="container">
+
+  <!-- PRODUCTS -->
+  <div class="products">
+
+    <div class="product">
+      <h3>Rice</h3>
+      <p>₹50 / kg</p>
+      <button onclick="addToCart('Rice', 50)">Add</button>
+    </div>
+
+    <div class="product">
+      <h3>Sugar</h3>
+      <p>₹45 / kg</p>
+      <button onclick="addToCart('Sugar', 45)">Add</button>
+    </div>
+
+    <div class="product">
+      <h3>Wheat</h3>
+      <p>₹40 / kg</p>
+      <button onclick="addToCart('Wheat', 40)">Add</button>
+    </div>
+
+    <div class="product">
+      <h3>Oil</h3>
+      <p>₹120 / liter</p>
+      <button onclick="addToCart('Oil', 120)">Add</button>
+    </div>
+
+    <div class="product">
+      <h3>Tea</h3>
+      <p>₹200 / kg</p>
+      <button onclick="addToCart('Tea', 200)">Add</button>
+    </div>
+
+    <div class="product">
+      <h3>Salt</h3>
+      <p>₹20 / kg</p>
+      <button onclick="addToCart('Salt', 20)">Add</button>
+    </div>
+
+  </div>
+
+  <!-- CART -->
+  <div class="cart">
+    <h3>Cart 🛒</h3>
+    <ul id="cartItems"></ul>
+    <h4>Total: ₹<span id="total">0</span></h4>
+  </div>
+
+</div>
+
+<script>
+  let total = 0;
+
+  function addToCart(item, price) {
+    let li = document.createElement("li");
+    li.textContent = item + " - ₹" + price;
+    document.getElementById("cartItems").appendChild(li);
+
+    total += price;
+    document.getElementById("total").innerText = total;
+  }
+</script>
+
+</body>
+</html>
