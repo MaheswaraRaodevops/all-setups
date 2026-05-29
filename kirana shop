@@ -77,8 +77,8 @@
 
     <div class="product">
       <h3>Rice</h3>
-      <p>₹50 / kg</p>
-      <button onclick="addToCart('Rice', 50)">Add</button>
+      <p>₹100 / kg</p>
+      <button onclick="addToCart('Rice', 100)">Add</button>
     </div>
 
     <div class="product">
